@@ -7,6 +7,8 @@ import { DevicesComponent } from './components/devices/devices.component';
 import { SensorsComponent } from './components/sensors/sensors.component';
 import { DeviceComponent } from './components/device/device.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +18,8 @@ import { DeviceComponent } from './components/device/device.component';
     DeviceComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

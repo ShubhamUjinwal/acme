@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SensorsComponent } from '../sensors/sensors.component';
+import { TaskService } from 'src/services/task.service';
 
 @Component({
   selector: 'app-device',
@@ -8,9 +9,15 @@ import { SensorsComponent } from '../sensors/sensors.component';
 })
 export class DeviceComponent implements OnInit {
 
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
+  }
+
+  createDevices() {
+    this.taskService.createDevice('Fridge', 'temperature').subscribe((response: any) => {
+      console.log(response);
+    });
   }
 
 }
