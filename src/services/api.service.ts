@@ -20,11 +20,11 @@ export class ApiService {
     return this.http.post(`${this.ROOT_URL}/${uri}`, payload);
   }
 
-  patch(uri: string, payload: Object){
-    return this.http.patch(`${this.ROOT_URL}/${uri}`, payload);
+  patch(uri: string, id: string, payload: Object){
+    return this.http.patch(`${this.ROOT_URL}/${uri}/${id}`, payload);
   }
 
-  delete(uri: string){
-    return this.http.delete(`${this.ROOT_URL}/${uri}`);
+  delete(uri: string, id: string){
+    return this.http.delete(`${this.ROOT_URL}/${uri}/${id}`);
   }
 }

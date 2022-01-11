@@ -1,2 +1,11 @@
-<p>devices works!</p>
-<app-device></app-device>
+<div>
+  <div>
+    <button (click)="addDevices()" >Add Devices</button>
+    <button (click)="editDeviceSensor()" >Edit Devices</button>
+    <button (click)="deleteDevice()" >Delete Devices</button>
+    <p *ngIf="devices.length < 1">No data available</p>
+    <ul class="list-devices" *ngFor="let device of devices">
+      <app-device [device]="device.name" [sensor]="device.sensor"></app-device>
+    </ul>
+  </div>
+</div>

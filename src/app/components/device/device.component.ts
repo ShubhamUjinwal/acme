@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SensorsComponent } from '../sensors/sensors.component';
 import { TaskService } from 'src/services/task.service';
 
@@ -9,15 +9,13 @@ import { TaskService } from 'src/services/task.service';
 })
 export class DeviceComponent implements OnInit {
 
+  @Input() device = '';
+  @Input() sensor = [];
+
+  public sensorArray: any = [];
+
   constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
   }
-
-  createDevices() {
-    this.taskService.createDevice('Fridge', 'temperature').subscribe((response: any) => {
-      console.log(response);
-    });
-  }
-
 }

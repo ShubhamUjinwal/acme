@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sensors',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SensorsComponent implements OnInit {
 
+  @Input() sensor = [];
+
+  public sensorArray: any = [];
   constructor() { }
 
   ngOnInit(): void {
+    for (const value in this.sensor){
+      this.sensorArray.push(this.sensor[value])
+    }
   }
 
 }

@@ -1,1 +1,12 @@
-<p>sensors works!</p>
+<div class="sensors-container">
+  <table>
+    <tr>
+      <th>Sensor</th>
+      <th>State</th>
+    </tr>
+    <tr *ngFor="let data of sensorArray">
+      <td>{{ data.name }}</td>
+      <td>{{ data.state }}</td>
+    </tr>
+  </table>
+</div>

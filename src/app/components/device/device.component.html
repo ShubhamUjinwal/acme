@@ -1,3 +1,4 @@
-<p>device works!</p>
-<button (click)="createDevices()">New Device</button>
-<app-sensors></app-sensors>
+<div class="device-container">
+  <h1>{{ device }}</h1>
+  <app-sensors [sensor]="sensor"></app-sensors>
+</div>
