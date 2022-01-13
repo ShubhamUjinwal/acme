@@ -28,22 +28,4 @@ export class DevicesComponent implements OnInit {
       });
   }
 
-  addDevices() {
-    this.taskService.createDevice().subscribe((response =>{
-      console.log(response);
-    }))
-  }
-
-  editDeviceSensor() {
-    this.taskService.editDeviceSensors('61dbf4ce8d47ae9876dd78ba').subscribe((response =>{
-      console.log(response);
-    }))
-  }
-
-  deleteDevice() {
-    this.taskService.deleteDevice('61dd1c11683b0a8b1945376f').subscribe((response =>{
-      console.log(response);
-    }))
-  }
-
 }

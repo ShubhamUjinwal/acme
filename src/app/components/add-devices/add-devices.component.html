@@ -1,0 +1,30 @@
+<div class="add-device">
+  <div>
+      <label>Device</label>
+      <input 
+        type="text" 
+        placeholder="Device name"
+        [(ngModel)]="deviceName"  
+      >
+      <label>Sensor</label>
+      <div>
+        <input 
+          type="text" 
+          placeholder="Sensor name"
+          [(ngModel)]="sensorName"    
+        >
+        <input 
+          type="text" 
+          placeholder="Sensor state"
+          [(ngModel)]="sensorState"   
+        >
+        <button
+          [disabled]="!isSensorAdded"
+          (click)="onCreateSensor()"
+        >Add Sensor</button>
+      </div>
+      <button
+          (click)="onCreateDevice()"
+        >Add Device</button>
+  </div>
+</div>

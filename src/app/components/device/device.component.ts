@@ -11,11 +11,20 @@ export class DeviceComponent implements OnInit {
 
   @Input() device = '';
   @Input() sensor = [];
+  @Input() deviceId = '';
 
   public sensorArray: any = [];
+
+  public updateDevice = {};
 
   constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
+  }
+
+  deleteDevice() {
+    this.taskService.deleteDevice(this.deviceId).subscribe((response =>{
+      console.log(response);
+    }))
   }
 }

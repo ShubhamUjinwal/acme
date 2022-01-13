@@ -30,12 +30,13 @@ export class TaskService {
     return this.apiService.get('devices');
   }
 
-  createDevice() {
-    return this.apiService.post('devices', this.data);
+  createDevice(data: any) {
+    return this.apiService.post('devices', data);
   }
 
-  editDeviceSensors(id: string) {
-    return this.apiService.patch('devices', id, this.data);
+  editDeviceSensors(id: string, data: any) {
+    console.log(data)
+    return this.apiService.patch('devices', id, data);
   }
 
   deleteDevice(id: string) {

@@ -8,6 +8,8 @@ import { SensorsComponent } from './components/sensors/sensors.component';
 import { DeviceComponent } from './components/device/device.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { AddDevicesComponent } from './components/add-devices/add-devices.component';
 
 @NgModule({
   declarations: [
@@ -15,11 +17,13 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     DevicesComponent,
     SensorsComponent,
-    DeviceComponent
+    DeviceComponent,
+    AddDevicesComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

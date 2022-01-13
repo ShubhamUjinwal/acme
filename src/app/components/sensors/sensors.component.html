@@ -1,12 +1,20 @@
 <div class="sensors-container">
+  <button (click)="updateDevice()">Edit</button>
   <table>
     <tr>
-      <th>Sensor</th>
+      <th>Sensors</th>
       <th>State</th>
     </tr>
     <tr *ngFor="let data of sensorArray">
       <td>{{ data.name }}</td>
-      <td>{{ data.state }}</td>
+      <td>
+        <input 
+          [readonly]='!editSensors'
+          value='{{ data.state }}'
+          (keyup.enter)="editDeviceSensor(data.name, $event)"
+          (blur)="editDeviceSensor(data.name, $event)"
+        >
+      </td>
     </tr>
   </table>
 </div>
