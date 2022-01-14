@@ -1,8 +1,18 @@
-.device-container {
-  width: 80%;
-  margin: auto;
+.device-header {
+  display: flex;
 
-  .header {
+  h2 {
+    margin-right: 1rem;
+  }
 
+  .btn{
+    margin: auto 0;
+    color: crimson;
+    padding: 0.5rem;
+    border-radius: 1rem;
+  }
+
+  .btn:hover {
+    background-color: lightslategray;
   }
 }

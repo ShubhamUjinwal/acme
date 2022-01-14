@@ -7,24 +7,32 @@
         [(ngModel)]="deviceName"  
       >
       <label>Sensor</label>
-      <div>
-        <input 
+      <div class="row">
+        <div class="col">
+          <input 
           type="text" 
           placeholder="Sensor name"
           [(ngModel)]="sensorName"    
         >
-        <input 
+        </div>
+        <div class="col">
+          <input 
           type="text" 
           placeholder="Sensor state"
           [(ngModel)]="sensorState"   
         >
-        <button
-          [disabled]="!isSensorAdded"
-          (click)="onCreateSensor()"
-        >Add Sensor</button>
+        </div>
       </div>
       <button
-          (click)="onCreateDevice()"
-        >Add Device</button>
+      type="button"
+      class="btn btn-danger"
+      [disabled]="!isSensorAdded"
+      (click)="onCreateSensor()"
+      >Add Sensor</button>
+      <button
+      type="button"
+      class="btn btn-primary btn2"
+        (click)="onCreateDevice()"
+      >Add Device</button>
   </div>
 </div>

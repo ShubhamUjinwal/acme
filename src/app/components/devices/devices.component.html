@@ -1,10 +1,11 @@
 <div>
   <div>
-    <!-- <button (click)="addDevices()" >Add Devices</button>
-    <button (click)="editDeviceSensor()" >Edit Devices</button> -->
     <p *ngIf="devices.length < 1">No data available</p>
     <ul class="list-devices" *ngFor="let device of devices">
       <app-device [deviceId]="device._id" [device]="device.name" [sensor]="device.sensor"></app-device>
+    </ul>
+    <ul>
+      <!-- <li *ngFor="let user of users$ | async">Bcd</li> -->
     </ul>
   </div>
 </div>

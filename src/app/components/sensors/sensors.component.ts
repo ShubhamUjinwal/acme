@@ -10,7 +10,6 @@ export class SensorsComponent implements OnInit {
 
   @Input() sensor = [];
   @Input() deviceId = '';
-  public editSensors = true;
 
   public sensorArray: any = [];
   public updatedSensors: any = [];
@@ -20,10 +19,6 @@ export class SensorsComponent implements OnInit {
     for (const value in this.sensor){
       this.sensorArray.push(this.sensor[value])
     }
-  }
-
-  edit(event: Event) {
-    console.log((<HTMLInputElement>event.target).value);
   }
 
   editDeviceSensor(name: String, event: Event) {

@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { DeviceComponent } from '../device/device.component';
+import { Component, createNgModuleRef, OnInit } from '@angular/core';
 import { TaskService } from 'src/services/task.service';
-import { map } from 'rxjs';
+import { Observable, BehaviorSubject, switchMap, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-devices',
@@ -23,7 +22,7 @@ export class DevicesComponent implements OnInit {
       .fetchDevices()
       .subscribe((response: any) => {
         for (const value in response){
-          this.devices.push(response[value])
+          this.devices.push(response[value]);
         }
       });
   }

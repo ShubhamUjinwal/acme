@@ -5,25 +5,6 @@ import { ApiService } from './api.service';
   providedIn: 'root'
 })
 export class TaskService {
-
-  public data = {
-    "name": "Plane",
-    "sensor": [
-      {
-        "name": "Tire pressure",
-        "state": "Moderate"
-      },
-      {
-        "name": "Current temperature",
-        "state": "Low"
-      },
-      {
-        "name": "Engine oil",
-        "state": "Low"
-      }
-    ]
-  }
-
   constructor(private apiService: ApiService) { }
 
   fetchDevices() {
@@ -35,7 +16,6 @@ export class TaskService {
   }
 
   editDeviceSensors(id: string, data: any) {
-    console.log(data)
     return this.apiService.patch('devices', id, data);
   }
 

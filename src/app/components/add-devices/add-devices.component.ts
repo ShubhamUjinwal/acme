@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
 import { TaskService } from 'src/services/task.service';
 
 @Component({
@@ -26,6 +27,10 @@ export class AddDevicesComponent implements OnInit {
       "name": this.sensorName,
       "state": this.sensorState
     });
+    this.clearSensorState();
+  }
+
+  clearSensorState() {
     this.sensorName = '';
     this.sensorState = '';
   }
@@ -38,6 +43,10 @@ export class AddDevicesComponent implements OnInit {
     this.taskService.createDevice(this.newDevice).subscribe((response =>{
       console.log(response);
     }))
+    this.clearDeviceState();
+  }
+
+  clearDeviceState() {
     this.deviceName = '';
     this.addDeviceSensor = [];
     this.newDevice = {}

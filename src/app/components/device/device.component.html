@@ -1,7 +1,7 @@
-<div class="device-container">
-  <div class="device-container-header">
-    <h1>{{ device }}</h1>
-    <button (click)="deleteDevice()" >Delete Device</button>
+<div class="container">
+  <div class="device-header">
+    <h2>{{ device }}</h2>
+    <button type="button" class="btn btn-close" (click)="deleteDevice()"></button>
   </div>
   <app-sensors [deviceId]="deviceId" [sensor]="sensor"></app-sensors>
 </div>

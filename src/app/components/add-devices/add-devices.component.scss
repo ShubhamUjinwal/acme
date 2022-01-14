@@ -1,13 +1,20 @@
 .add-device{
-  width: 70%;
-  margin: auto;
+  margin: 1rem 2.75rem 4rem 2.75rem;
   input[type=text], select {
     width: 100%;
-    padding: 12px 20px;
+    padding: 10px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+  }
+
+  label {
+    font-size: x-large;
+  }
+
+  .btn2 {
+    margin-left: 1rem;
   }
 }
