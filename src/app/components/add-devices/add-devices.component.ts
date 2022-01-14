@@ -23,11 +23,13 @@ export class AddDevicesComponent implements OnInit {
   }
 
   onCreateSensor() {
+    if (!!this.sensorName && !!this.sensorState){
     this.addDeviceSensor.push( {
       "name": this.sensorName,
       "state": this.sensorState
     });
     this.clearSensorState();
+  }
   }
 
   clearSensorState() {
@@ -36,14 +38,23 @@ export class AddDevicesComponent implements OnInit {
   }
 
   onCreateDevice() {
-    this.newDevice = {
-      "name": this.deviceName,
-      "sensor": this.addDeviceSensor
-    }
-    this.taskService.createDevice(this.newDevice).subscribe((response =>{
-      console.log(response);
-    }))
+
+    if (!!this.deviceName) {
+      
+    this.onCreateSensor();
+    
+    if (this.addDeviceSensor.length > 0) {
+      this.newDevice = {
+        "name": this.deviceName,
+        "sensor": this.addDeviceSensor
+      }
+      this.taskService.createDevice(this.newDevice).subscribe((response =>{
+        console.log(response);
+      }))
+    
     this.clearDeviceState();
+    }
+    }
   }
 
   clearDeviceState() {

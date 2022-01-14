@@ -1,6 +1,7 @@
 import { Component, createNgModuleRef, OnInit } from '@angular/core';
 import { TaskService } from 'src/services/task.service';
 import { Observable, BehaviorSubject, switchMap, Subject } from 'rxjs';
+import { Device } from 'src/app/models/device.model';
 
 @Component({
   selector: 'app-devices',
@@ -14,6 +15,10 @@ export class DevicesComponent implements OnInit {
   constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
+    this.taskService.refreshDevices$
+        .subscribe(() => {
+          this.getDevices();
+        })
     this.getDevices();
   }
 
@@ -21,9 +26,14 @@ export class DevicesComponent implements OnInit {
     this.taskService
       .fetchDevices()
       .subscribe((response: any) => {
-        for (const value in response){
-          this.devices.push(response[value]);
-        }
+        console.log("Response", response);
+
+        this.devices = response;
+
+        // for (const value in response){
+        //   this.devices.push(response[value]);
+        // }
+        console.log("Array", this.devices)
       });
   }
 
